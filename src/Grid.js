@@ -1,5 +1,11 @@
 function Grid() {
-  this.gridWidth = 3;
-  this.gridHeight = 3;
-  this.currentGrid = [];
+  this.array = [[],[],[],[],[],[],[],[],[]]
 }
+
+function Player() {
+}
+
+Player.prototype.moveTopLeft = function () {
+  grid.array[0].push('X');
+  console.log(grid.array)
+};

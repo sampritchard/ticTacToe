@@ -1,19 +1,23 @@
-describe("Grid", function() {
+describe("The game board", function() {
   var grid;
 
   beforeEach(function() {
     grid = new Grid();
   });
 
-  it("has a width of 3", function() {
-    expect(grid.gridWidth).toEqual(3);
+  it("should have 9 spaces in an array", function() {
+    expect(grid.array.length).toEqual(9);
+  });
+});
+
+describe("Player X move into Top Left", function() {
+  beforeEach(function() {
+    grid = new Grid();
+    player = new Player();
   });
 
-  it("has a height of 3", function() {
-    expect(grid.gridHeight).toEqual(3);
-  });
-
-  it("starts empty", function() {
-    expect(grid.currentGrid).toEqual([]);
-  });
+  it("should add an X into the array", function() {
+    player.moveTopLeft();
+    expect(grid.array).toEqual([['X'],[],[],[],[],[],[],[], []])
+  })
 });
